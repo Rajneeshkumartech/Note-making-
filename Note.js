@@ -90,3 +90,5 @@ setTimeout(() => {
 show.addEventListener("click",()=>{
 displayNotes()
 })
+
+// code ends here
