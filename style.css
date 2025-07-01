@@ -1,0 +1,198 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f3f4f6; 
+  color: #1f2937; 
+}
+
+.container {
+display: flex;
+justify-content: space-evenly;
+  /* margin-left: auto;
+  margin-right: auto; */
+  padding: 1rem; 
+  /* max-width: 42rem;  */
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+}
+
+h1 {
+  /* line-height: 2.25rem; */
+  /* font-weight: 700;  */
+  margin-bottom: 1.5rem; 
+  text-align: center; 
+  color: #374151; 
+}
+label{
+   display: block;
+   margin-bottom: 1rem;
+   margin-top: 1rem;
+   font-size: large;
+   font-weight: 600;  
+}
+
+
+
+#notesContainer{
+ 
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.mar-pad{
+    background-color: #ffff;
+    padding: 1.5rem;
+    margin: 1rem;
+    min-width: 40vw;
+    box-shadow: 0 0px 15px -8px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 2rem;
+
+}
+
+textarea,input{
+   width: 90%; 
+  padding: 0.5rem 1rem 1rem 0rem; 
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem; 
+}
+
+textarea:focus,input:focus{
+      outline: none; 
+  /* Tailwind: focus:ring-2 focus:ring-blue-500 */
+  box-shadow: 0 0 0 2px #3b82f6; 
+}
+.submitstyle{
+    margin: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.submitstyle button{
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  margin: 0.4rem;
+  border-radius: 2rem 4rem;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 300ms;
+  cursor: pointer;
+
+}
+.submitstyle button:hover{
+    background-color: #1d4ed8;
+    border-radius: 1rem ;
+}
+
+.submitstyle button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #2563eb;
+}
+
+.message {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+.message.success {
+  color: #16a34a;
+}
+.message.error {
+  color: #dc2626;
+}
+
+.no-notes-message {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 20px;
+    width: 100%; 
+}
+
+.note-card {
+  
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius:2rem 1rem ;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08); 
+    position: relative; /* डिलीट बटन को पोजीशन करने के लिए */
+      word-wrap: break-word;/*लंबे शब्दों को तोड़ने के लिए */
+    /* box-sizing: border-box; */
+max-height: 400px;
+overflow-y: auto;
+}
+
+
+.note-card h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #ccc; /* शीर्षक के नीचे डैश लाइन */
+    padding-bottom: 8px;
+}
+
+.note-card p {
+    color: #555;
+    white-space: pre-wrap; /* टेक्स्ट को जैसे लिखा है वैसे ही दिखाएँ (नई लाइनें, स्पेस) */
+    font-size: 15px;
+    line-height: 1.6;
+
+  max-height: none;
+  overflow-y: visible;
+}
+
+.delete-button {
+    position: absolute; /* कार्ड के सापेक्ष स्थिति */
+    top: 10px;
+    right: 10px;
+    background-color: #dc3545; 
+    color: white;
+    border: none;
+    border-radius: 50%; 
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* होवर पर गहरा लाल */
+}
+
+.savednotesbox { /* यह वह क्लास है जो #notesContainer को लागू की गई है */
+    max-height: 450px; /* अपनी डिज़ाइन के अनुसार अधिकतम ऊंचाई निर्धारित करें */
+    overflow-y: auto; /* सामग्री ओवरफ्लो होने पर वर्टिकल स्क्रॉल बार जोड़ता है */
+    padding-right: 15px; /* स्क्रॉल बार के कारण सामग्री को छिपाने से रोकने के लिए */
+    /* ... mar-pad से मौजूदा स्टाइलिंग ... */
+    background-color: #ffff;
+    padding: 1.5rem;
+    margin: 1rem;
+    min-width: 40vw;
+    box-shadow: 0 0px 15px -8px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem 2rem;
+}
+
+.my_notes {
+    overflow-y: hidden; /* यह सुनिश्चित करता है कि "My Notes" सेक्शन स्क्रॉल न हो */
+}
+
+.notes-vanishing {
+    opacity: 0; /* पूरी तरह से अदृश्य */
+    transform: translateY(-20px); /* थोड़ा ऊपर की ओर ले जाएं */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* ट्रांज़िशन प्रभाव */
+}
