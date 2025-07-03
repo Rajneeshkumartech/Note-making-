@@ -12,14 +12,15 @@ body {
 .container {
 display: flex;
 justify-content: space-evenly;
-  /* margin-left: auto;
-  margin-right: auto; */
+  margin-left: auto;
+  margin-right: auto;
   padding: 1rem; 
   /* max-width: 42rem;  */
 }
 
 @media (min-width: 768px) {
   .container {
+    word-wrap: break-word;
     padding: 2rem;
   }
 }
@@ -73,6 +74,7 @@ textarea:focus,input:focus{
     margin: 1rem;
     display: flex;
     justify-content: space-evenly;
+    word-wrap: break-word;
 
 }
 .submitstyle button{
